@@ -31,6 +31,7 @@ export default function ChatBox() {
       const data = await res.json();
       setMessages([...newMessages, { role: "assistant", content: data.reply }]);
     } catch (err) {
+              console.error(err);
       setMessages([...newMessages, { role: "assistant", content: "Something went wrong. Please try again later." }]);
     } finally {
       setLoading(false);
